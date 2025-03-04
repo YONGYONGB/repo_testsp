@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.test.fapp.account.AccountDao">   
+
+	<resultMap type="com.test.fapp.account.AccountDto" id="resultMapObj"></resultMap>
+ 
+	 <select id="selectList" resultMap="resultMapObj">
+		SELECT
+			a.seq,
+	    	a.first_Name,
+	    	a.last_Name,
+	    	a.nick_Name,
+	    	a.text,
+	    	a.represent
+		FROM
+				account a
+			WHERE 1=1
+			ORDER BY seq asc
+	</select>
+	  
+	  
+	 <select id="selectList_test" resultMap="resultMapObj">
+		SELECT
+			a.seq,
+			a.first_Name,
+	    	a.last_Name,
+	    	a.nick_Name,
+	    	a.text,
+	    	a.represent
+		FROM
+			account a
+		WHERE 1=1
+			AND a.seq = #{seq}       <!-- seq 를 특정함 , #(seq)정적으로 받음 이때 이 seq는 dto, controller의 seq와 같다 -->	
+		ORDER BY seq asc
+	</select>
+	
+	  
+	  
+</mapper>
+

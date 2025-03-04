@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+</head>
+<body>
+	<table>
+		<tr>
+			<td>seq</td>
+			<td>company</td>
+			<td>department</td>
+			<td>offic_post</td>
+			<td>account_seq</td>
+			<td>represent</td>
+		</tr>
+		<tr th:each ="list :${list}">
+			<td th:text="${list.seq}"></td> 
+			<td><a th:href= "@{/labelsXdmItem(seq=${list.seq})}" th:text="${list.company}"></a></td>
+			<td><a th:href= "@{/labelsXdmItem(seq=${list.seq})}" th:text="${list.department}"></a></td>
+			<td><a th:href= "@{/labelsXdmItem(seq=${list.seq})}" th:text="${list.offic_post}"></a></td>
+			<td><a th:href= "@{/labelsXdmItem(seq=${list.seq})}" th:text="${list.account_seq}"></a></td>
+			<td><a th:href= "@{/labelsXdmItem(seq=${list.seq})}" th:text="${list.represent}"></a></td>
+		</tr>
+	</table>
+</body>
+</html>

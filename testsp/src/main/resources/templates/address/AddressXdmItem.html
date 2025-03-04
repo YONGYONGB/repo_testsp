@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+</head>
+<body>
+	<table>
+		<tr>
+			<td>seq</td>
+			<td>address</td>
+			<td>detail_address</td>
+			<td>space</td>
+			<td>account_seq</td>
+			<td>represent</td>
+		</tr>
+		<tr>
+			<td th:text="${item.seq}"></td> 
+			<td th:text="${item.address}"></td>
+			<td th:text="${item.detail_address}"></td>
+			<td th:text="${item.space}"></td>
+			<td th:text="${item.account_seq}"></td>
+			<td th:text="${item.represent}"></td>
+		</tr>
+	</table>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.test.fapp.day.DayDao">   
+
+	<resultMap type="com.test.fapp.day.DayDto" id="resultMapObj"></resultMap>
+ 
+	 <select id="selectList" resultMap="resultMapObj">
+		SELECT
+			a.seq,
+	    	a.special_day,
+	    	a.date,
+	    	a.lift_force,
+	    	a.account_seq,
+	    	a.represent
+		FROM
+				day a
+			WHERE 1=1
+			ORDER BY seq asc
+	</select>
+	  
+	  
+	 <select id="selectItem" resultMap="resultMapObj">
+		SELECT
+			a.seq,
+	    	a.special_day,
+	    	a.date,
+	    	a.lift_force,
+	    	a.account_seq,
+	    	a.represent
+		FROM
+			day a
+		WHERE 1=1
+			AND a.seq = #{seq}       <!-- seq 를 특정함 , #(seq)정적으로 받음 이때 이 seq는 dto, controller의 seq와 같다 -->	
+		ORDER BY seq asc
+	</select>
+	
+	  
+	  
+</mapper>
+

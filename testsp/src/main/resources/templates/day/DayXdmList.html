@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+</head>
+<body>
+	<table>
+		<tr>
+			<td>seq</td>
+			<td>special_day</td>
+			<td>date</td>
+			<td>lift_force</td>
+			<td>account_seq</td>
+			<td>represent</td>
+		</tr>
+		<tr th:each ="list :${list}">
+			<td th:text="${list.seq}"></a></td> 
+			<td><a th:href= "@{/dayXdmItem(seq=${list.seq})}" th:text="${list.special_day}"></a></td>
+			<td><a th:href= "@{/dayXdmItem(seq=${list.seq})}" th:text="${list.date}"></a></td>
+			<td><a th:href= "@{/dayXdmItem(seq=${list.seq})}" th:text="${list.lift_force}"></a></td>
+			<td><a th:href= "@{/dayXdmItem(seq=${list.seq})}" th:text="${list.account_seq}"></a></td>
+			<td><a th:href= "@{/dayXdmItem(seq=${list.seq})}" th:text="${list.represent}"></a></td>
+		</tr>
+	</table>
+</body>
+</html>

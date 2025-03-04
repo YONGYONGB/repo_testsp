@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+</head>
+<body>
+	<table>
+		<tr>
+			<td>seq</td>
+			<td>type</td>
+			<td>account_seq</td>
+			<td>represent</td>
+		</tr>
+		<tr>
+			<td th:text="${item.seq}"></td> 
+			<td th:text="${item.type}"></td>
+			<td th:text="${item.account_seq}"></td>
+			<td th:text="${item.represent}"></td>
+		</tr>
+	</table>
+</body>
+</html>

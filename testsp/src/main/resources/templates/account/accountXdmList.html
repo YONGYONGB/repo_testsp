@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">  
+	<head>
+	</head>
+	<body>			
+		<table>
+			<tr>
+				<td>seq</td>
+				<td>first_Name</td>
+				<td>last_Name</td>
+				<td>nick_Name</td>
+				<td>text</td>
+				<td>represent</td>
+			</tr>
+			<tr th:each ="list :${list}">
+				<!-- seq에 list.seq 값을 넣어줌 그렇다면 이게 controller에 accountDto에 연결이됨(바인딩)-->
+				<td><a th:href = "@{/accountXdmTest(seq=${list.seq})}" th:text="${list.seq}"></a></td> 
+				<td><a th:href = "@{/accountXdmTest(seq=${list.seq})}" th:text="${list.first_Name}"></a></td>
+				<td><a th:href = "@{/accountXdmTest(seq=${list.seq})}" th:text="${list.last_Name}"></a></td>
+				<td><a th:href = "@{/accountXdmTest(seq=${list.seq})}" th:text="${list.nick_Name}"></a></td>
+				<td><a th:href = "@{/accountXdmTest(seq=${list.seq})}" th:text="${list.text}"></a></td>
+				<td><a th:href = "@{/accountXdmTest(seq=${list.seq})}" th:text="${list.represent}"></a></td>
+			</tr>
+		</table>
+		
+	</body>
+</html>
+

@@ -1,0 +1,37 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.test.fapp.contactaddress.ContactAddressDao">   
+<resultMap type="com.test.fapp.contactaddress.ContactAddressDto" id="resultMapObj"></resultMap>
+
+
+ <select id="selectList" resultMap="resultMapObj">
+	SELECT
+	a.seq,
+	a.type,
+	a.number,
+	a.account_seq,
+	a.represent
+	FROM
+	contactaddress a
+	WHERE 1=1
+	ORDER BY seq asc
+</select>
+	
+<select id="selectItem" resultMap="resultMapObj">
+	SELECT
+	a.seq,
+	a.type,
+	a.number,
+	a.account_seq,
+	a.represent
+	FROM
+	contactaddress a
+	WHERE 1=1
+	And seq = #{seq}
+	ORDER BY seq asc
+</select>	
+	
+	
+	
+	
+</mapper>
