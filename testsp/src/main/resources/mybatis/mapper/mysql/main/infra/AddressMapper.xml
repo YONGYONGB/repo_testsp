@@ -20,7 +20,7 @@
 	</select>
 	
 	
-	 <select id="selectItem" resultMap="resultMapObj">
+	 <select id="selectView" resultMap="resultMapObj">
 		SELECT
 			a.seq,
 	    	a.address,
@@ -35,6 +35,16 @@
 			ORDER BY seq asc
 	</select>
 	
+	<insert id ="insert">
+	Insert into address(
+	address,detail_address,space,account_seq,represent
+	)Values(
+	#{address},#{detail_address},#{space},#{account_seq},#{represent}
+	)
+	<selectKey resultType="String"  keyProperty="seq" order="AFTER">
+		SELECT last_insert_id();
+	</selectKey>
+	</insert>
 	  	
 	  
 </mapper>

@@ -24,9 +24,14 @@ public class AccountService {
 	}
 	
 	
-	public AccountDto selectList_test(AccountDto accountDto) {
+	public AccountDto selectView(AccountDto accountDto) {
 		
-		return accountDao.selectList_test(accountDto);
+		return accountDao.selectView(accountDto);
+	}
+	
+	public int insert(AccountDto accountDto) {
+		
+		return accountDao.insert(accountDto);
 	}
 	
 	

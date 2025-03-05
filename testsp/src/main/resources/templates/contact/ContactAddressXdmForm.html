@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+</head>
+<body>
+	<form action="ContactAddressXdmInst" method="post" id="form">
+		seq:<input type="text" name="seq" id="seq" disabled>
+		type:<input type="text" name="type" id="type">
+		number:<input type="text" name="number" id="number">
+		account_seq:<input type="text" name="account_seq" id="account_seq">
+		represent:<input type="text" name="represent" id="represent">
+		<button type="button" id="savecontact">등록하기</button>
+	</form>
+	<script type="text/javascript">
+	document.getElementById("savecontact").onclick = function(){
+		document.getElementById("form").submit();
+		alert("성공");
+	}
+	</script>
+</body>
+</html>

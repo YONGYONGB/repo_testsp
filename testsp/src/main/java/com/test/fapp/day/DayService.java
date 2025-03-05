@@ -15,8 +15,8 @@ public class DayService {
 		return dayDao.selectList();
 	}
 	
-	public DayDto selectItem(DayDto dayDto){
-		return dayDao.selectItem(dayDto);
+	public DayDto selectView(DayDto dayDto){
+		return dayDao.selectView(dayDto);
 	}
 	
 }

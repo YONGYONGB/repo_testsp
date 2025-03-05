@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+</head>
+<body>
+	<form action="/addressXmdInst" method="post" id ="form">
+			seq:<input type="text" name="seq" id= "seq" disabled>
+			address:<input type="text" id= "address" name="address">
+			detail_address:<input type="text" id= "detail_address" name="detail_address">
+			space:<input type="text" id= "space" name="space">
+			account_seq:<input type="text" id= "account_seq" name="account_seq">
+			represent:<input type="text" id= "represent" name="represent">
+			<button type="button" id="saveAddress">등록</button>
+	</form>
+	<script type="text/javascript">
+		document.getElementById("saveAddress").onclick = function(){
+			document.getElementById("form").submit();
+			alert("성공하셨습니다");
+		}
+	</script>
+</body>
+</html>

@@ -15,12 +15,13 @@
 		</tr>
 		<tr th:each ="list :${list}">
 			<td th:text="${list.seq}"></td> 
-			<td><a th:href= "@{/addressXdmItem(seq=${list.seq})}" th:text="${list.address}"></a></td>
-			<td><a th:href= "@{/addressXdmItem(seq=${list.seq})}" th:text="${list.detail_address}"></a></td>
-			<td><a th:href= "@{/addressXdmItem(seq=${list.seq})}" th:text="${list.space}"></a></td>
-			<td><a th:href= "@{/addressXdmItem(seq=${list.seq})}" th:text="${list.account_seq}"></a></td>
-			<td><a th:href= "@{/addressXdmItem(seq=${list.seq})}" th:text="${list.represent}"></a></td>
+			<td><a th:href= "@{/addressXdmView(seq=${list.seq})}" th:text="${list.address}"></a></td>
+			<td><a th:href= "@{/addressXdmView(seq=${list.seq})}" th:text="${list.detail_address}"></a></td>
+			<td><a th:href= "@{/addressXdmView(seq=${list.seq})}" th:text="${list.space}"></a></td>
+			<td><a th:href= "@{/addressXdmView(seq=${list.seq})}" th:text="${list.account_seq}"></a></td>
+			<td><a th:href= "@{/addressXdmView(seq=${list.seq})}" th:text="${list.represent}"></a></td>
 		</tr>
 	</table>
+	<a href = "/addressXdmForm">등록하기</a>
 </body>
 </html>

@@ -15,7 +15,12 @@ public class ContactAddressService {
 		return contactAddressDao.selectList();
 	}
 	
-	public ContactAddressDto selectItem(ContactAddressDto contactAddressDto){
-		return contactAddressDao.selectItem(contactAddressDto);
+	public ContactAddressDto selectView(ContactAddressDto contactAddressDto){
+		return contactAddressDao.selectView(contactAddressDto);
 	}
+	
+	public int insert(ContactAddressDto contactAddressDto) {
+		return contactAddressDao.insert(contactAddressDto);
+	}
+	
 }

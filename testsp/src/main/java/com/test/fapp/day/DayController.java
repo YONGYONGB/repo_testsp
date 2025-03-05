@@ -18,9 +18,9 @@ public class DayController {
 		return "day/DayXdmList";
 	}
 	
-	@RequestMapping(value = "dayXdmItem")
-	public String dayXdmItem(Model model, DayDto dayDto) {
-		model.addAttribute("item",dayService.selectItem(dayDto));
+	@RequestMapping(value = "dayXdmView")
+	public String dayXdmView(Model model, DayDto dayDto) {
+		model.addAttribute("item",dayService.selectView(dayDto));
 		return "day/DayXdmItem";
 	}
 	

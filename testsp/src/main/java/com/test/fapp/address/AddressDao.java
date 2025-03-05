@@ -9,5 +9,7 @@ public interface AddressDao {
 
 	public List<AddressDto> selectList();
 	
-	public AddressDto selectItem(AddressDto addressDto);
+	public AddressDto selectView(AddressDto addressDto);
+	
+	public int insert(AddressDto addressDto);
 }

@@ -31,14 +31,30 @@ public class AccountController {
 		return "account/accountXdmList";
 	}	
 	
-	@RequestMapping(value = "/accountXdmTest")
-		public String accountXdmTest(Model model, AccountDto accountDto) {
+	@RequestMapping(value = "/accountXdmView")
+		public String accountXdmView(Model model, AccountDto accountDto) {
 		
-		System.out.println("accountDto.getSeq():" + accountDto.getSeq()); 
+//		System.out.println("accountDto.getSeq():" + accountDto.getSeq()); 
 		
 		
-		model.addAttribute("item", accountService.selectList_test(accountDto)); // 한개만 뽑으려고 하기때문에 list가 아니라item으로 
-	return "account/test"; // item 값을 던져주는
+		model.addAttribute("item", accountService.selectView(accountDto)); // 한개만 뽑으려고 하기때문에 list가 아니라item으로 
+		return "account/test"; // item 값을 던져주는
+	}
+	
+	@RequestMapping(value = "/accountXdmForm")
+	public String accountXdmForm() {
+			
+		return "account/accountXdmForm"; // item 값을 던져주는
+	}
+	
+	@RequestMapping(value = "/accountXdmInst")
+	public String accountXdmInst(AccountDto accountDto) {
+		
+		System.out.println(accountDto.getSeq());
+		
+		accountService.insert(accountDto);
+		System.out.println(accountDto.getSeq());
+		return "redirect:/accountXdmList"; // item 값을 던져주는
 	}
 	
 }

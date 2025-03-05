@@ -8,6 +8,7 @@ public class ContactAddressDto {
 	private String number;
 	private Integer account_seq;
 	private Boolean represent;
+	
 	public String getSeq() {
 		return seq;
 	}

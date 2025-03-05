@@ -18,10 +18,21 @@ public class ContactAddressController {
 		return "contact/ContactAddressXdmList";
 	}
 	
-	@RequestMapping(value = "/ContactAddressXdmItem")
-	public String ContactAddressXdmItem(Model model, ContactAddressDto contactAddressDto) {
-		model.addAttribute("item", contactAddressService.selectItem(contactAddressDto));
+	@RequestMapping(value = "/ContactAddressXdmView")
+	public String ContactAddressXdmView(Model model, ContactAddressDto contactAddressDto) {
+		model.addAttribute("item", contactAddressService.selectView(contactAddressDto));
 		return "contact/ContactAddressItem";
+	}
+	@RequestMapping(value = "/ContactAddressXdmForm")
+	public String ContactAddressXdmForm() {
+		return "contact/ContactAddressXdmForm";
+	}
+	
+	
+	@RequestMapping(value = "/ContactAddressXdmInst")
+	public String ContactAddressXdmInst(ContactAddressDto contactAddressDto) {
+		contactAddressService.insert(contactAddressDto);
+		return "redirect:/ContactAddressXdmList";
 	}
 	
 }

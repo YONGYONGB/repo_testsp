@@ -17,7 +17,7 @@
 	ORDER BY seq asc
 </select>
 	
-<select id="selectItem" resultMap="resultMapObj">
+<select id="selectView" resultMap="resultMapObj">
 	SELECT
 	a.seq,
 	a.type,
@@ -31,7 +31,28 @@
 	ORDER BY seq asc
 </select>	
 	
-	
+
+<insert id="insert">
+Insert into contactaddress(
+	type,
+	number,
+	account_seq,
+	represent
+)Values(
+	#{type},
+	#{number},
+	#{account_seq},
+	#{represent}
+)
+
+<selectKey resultType="String" keyProperty="seq" order="AFTER">
+	SELECT last_insert_id();
+</selectKey>
+
+</insert>
+
+
+
 	
 	
 </mapper>

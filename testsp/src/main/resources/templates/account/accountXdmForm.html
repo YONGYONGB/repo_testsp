@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">  
+	<head>
+	</head>
+	<body>			
+	<form action="/accountXdmInst" method ="post" id="accountForm">	
+			seq:<input type="text" name ="seq" id="seq" disabled>
+			first_Name:<input type="text" name ="first_Name" id="first_Name">
+			last_Name:<input type="text" name ="last_Name" id="last_Name">
+			nick_Name:<input type="text" name ="nick_Name" id="nick_Name">
+			text:<input type="text" name ="text" id="text">
+			represent:<input type="text" name ="represent" id="represent">
+			<button type ="button" id ="saveAccount">등록하기</button>
+		</form>
+	<script type="text/javascript">
+	document.getElementById("saveAccount").onclick = function(){
+		document.getElementById("accountForm").submit();
+		alert("추가완료");
+	}
+	</script>
+	</body>
+</html>
+

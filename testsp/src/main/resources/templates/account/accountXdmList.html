@@ -14,15 +14,15 @@
 			</tr>
 			<tr th:each ="list :${list}">
 				<!-- seq에 list.seq 값을 넣어줌 그렇다면 이게 controller에 accountDto에 연결이됨(바인딩)-->
-				<td><a th:href = "@{/accountXdmTest(seq=${list.seq})}" th:text="${list.seq}"></a></td> 
-				<td><a th:href = "@{/accountXdmTest(seq=${list.seq})}" th:text="${list.first_Name}"></a></td>
-				<td><a th:href = "@{/accountXdmTest(seq=${list.seq})}" th:text="${list.last_Name}"></a></td>
-				<td><a th:href = "@{/accountXdmTest(seq=${list.seq})}" th:text="${list.nick_Name}"></a></td>
-				<td><a th:href = "@{/accountXdmTest(seq=${list.seq})}" th:text="${list.text}"></a></td>
-				<td><a th:href = "@{/accountXdmTest(seq=${list.seq})}" th:text="${list.represent}"></a></td>
+				<td><a th:href = "@{/accountXdmView(seq=${list.seq})}" th:text="${list.seq}"></a></td> 
+				<td><a th:href = "@{/accountXdmView(seq=${list.seq})}" th:text="${list.first_Name}"></a></td>
+				<td><a th:href = "@{/accountXdmView(seq=${list.seq})}" th:text="${list.last_Name}"></a></td>
+				<td><a th:href = "@{/accountXdmView(seq=${list.seq})}" th:text="${list.nick_Name}"></a></td>
+				<td><a th:href = "@{/accountXdmView(seq=${list.seq})}" th:text="${list.text}"></a></td>
+				<td><a th:href = "@{/accountXdmView(seq=${list.seq})}" th:text="${list.represent}"></a></td>
 			</tr>
 		</table>
-		
+		<a href = "/accountXdmForm">등록하기</a>
 	</body>
 </html>
 

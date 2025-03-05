@@ -14,11 +14,12 @@
 		</tr>
 		<tr th:each ="list:${list}">
 			<td th:text="${list.seq}"></td> 
-			<td><a th:href= "@{/ContactAddressXdmItem(seq=${list.seq})}" th:text="${list.type}"></a></td>
-			<td><a th:href= "@{/ContactAddressXdmItem(seq=${list.seq})}" th:text="${list.number}"></a></td>
-			<td><a th:href= "@{/ContactAddressXdmItem(seq=${list.seq})}" th:text="${list.account_seq}"></a></td>
-			<td><a th:href= "@{/ContactAddressXdmItem(seq=${list.seq})}" th:text="${list.represent}"></a></td>
+			<td><a th:href= "@{/ContactAddressXdmView(seq=${list.seq})}" th:text="${list.type}"></a></td>
+			<td><a th:href= "@{/ContactAddressXdmView(seq=${list.seq})}" th:text="${list.number}"></a></td>
+			<td><a th:href= "@{/ContactAddressXdmView(seq=${list.seq})}" th:text="${list.account_seq}"></a></td>
+			<td><a th:href= "@{/ContactAddressXdmView(seq=${list.seq})}" th:text="${list.represent}"></a></td>
 		</tr>
 	</table>
+	<a href= "/ContactAddressXdmForm">등록하기</a>
 </body>
 </html>

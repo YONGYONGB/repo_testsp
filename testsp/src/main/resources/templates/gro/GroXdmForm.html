@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+</head>
+<body>
+
+<form action="groXdmInst" method="get" id = "form">
+
+	seq:<input type ="text" name = "seq" maxlength="10" disabled id ="seq"> <!-- input 변수를 담기 위한 name-->
+	grou:<input type ="text" name = "grou" placeholder="이름을 입력"  id="grou">
+	<button type = "button" id="btnSave">저장</button>
+</form>
+
+<script type="text/javascript">
+	document.getElementById("btnSave").onclick = function(){
+	
+        document.getElementById("form").submit();
+        alert("추가하였습니다");
+    
+} 
+
+</script>
+	
+</body>
+</html>

@@ -27,6 +27,23 @@
 		ORDER BY seq asc
 	</select>
 	
+	<insert id ="insert"> <!--resultmap이 없는 이유는 리턴 받을게 없기때문에 -->
+	Insert into gro
+	(
+		<!-- seq, -->
+    	grou
+	)
+	Values
+	(
+	<!-- 	#{seq}, -->
+		#{grou}
+	)
+		<selectKey resultType="String" keyProperty="seq" order="AFTER">
+			SELECT last_insert_id()
+		</selectKey>
+	</insert>
+
+	
 	  
 	  
 </mapper>

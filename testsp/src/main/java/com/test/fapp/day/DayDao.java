@@ -9,6 +9,6 @@ public interface DayDao {
 
 	public List<DayDto> selectList();
 	
-	public DayDto selectItem(DayDto dayDto);
+	public DayDto selectView(DayDto dayDto);
 	
 }

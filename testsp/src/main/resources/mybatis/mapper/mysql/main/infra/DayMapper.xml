@@ -20,7 +20,7 @@
 	</select>
 	  
 	  
-	 <select id="selectItem" resultMap="resultMapObj">
+	 <select id="selectView" resultMap="resultMapObj">
 		SELECT
 			a.seq,
 	    	a.special_day,

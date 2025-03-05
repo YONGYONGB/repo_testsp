@@ -9,5 +9,7 @@ public interface ContactAddressDao {
 
 	public List<ContactAddressDto> selectList();
 	
-	public ContactAddressDto selectItem(ContactAddressDto contactAddressDto);
+	public ContactAddressDto selectView(ContactAddressDto contactAddressDto);
+	
+	public int insert(ContactAddressDto contactAddressDto);
 }

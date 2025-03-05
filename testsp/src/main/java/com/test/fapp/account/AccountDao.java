@@ -10,6 +10,8 @@ public interface AccountDao {
 	//mapper 에서 해당하는 쿼리와 연결 시켜 주고  쿼리 결과를 가져옴
 	
 	public List<AccountDto> selectList();
-	public AccountDto selectList_test(AccountDto accountDto);    //  AccountDto로 함으로써 제한을 둠?
+	public AccountDto selectView(AccountDto accountDto);    //  AccountDto로 함으로써 제한을 둠?
+	
+	public int insert(AccountDto accountDto);
 	
 }

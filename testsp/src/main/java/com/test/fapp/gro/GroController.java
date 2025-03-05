@@ -12,15 +12,34 @@ public class GroController {
 	@Autowired
 	GroService groService;
 	
-	@RequestMapping(value = "groXdmList")
+	@RequestMapping(value = "groXdmList") //url 매핑
 	public String groXdmList(Model model) {
 		model.addAttribute("list", groService.selectList());
-		return "gro/GroXdmList";
+		return "gro/GroXdmList"; // view 매핑
 	}
-	@RequestMapping(value = "groXdmItem")
+	
+	@RequestMapping(value = "groXdmItem") // 아이템이 아니라 view임, url 매핑
 	public String groXdmItem(Model model, GroDto groDto) {
 		model.addAttribute("item", groService.selectItem(groDto));
-		return "gro/GroXdmItem";
+		return "gro/GroXdmItem"; // view 매핑
+	}
+
+	
+	@RequestMapping(value = "groXdmForm")
+	public String groXdmForm() {
+		return "gro/GroXdmForm";
+	}
+	
+	@RequestMapping(value = "groXdmInst")
+	public String groXdmInst(GroDto groDto) {
+		
+		System.out.println("groDto.getSeq()"+groDto.getSeq());
+		System.out.println("groDto.getGrou()"+groDto.getGrou());
+		
+		groService.insert(groDto);
+		System.out.println("groDto.getSeq()"+groDto.getSeq());
+		
+		return "redirect:/groXdmList";
 	}
 	
 }

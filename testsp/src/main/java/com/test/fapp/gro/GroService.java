@@ -17,4 +17,11 @@ public class GroService {
 	public GroDto selectItem(GroDto groDto){
 		return groDao.selectItem(groDto);
 	}
+	
+	public int insert(GroDto groDto){
+		return groDao.insert(groDto);
+	}
+	
+	
+	
 }

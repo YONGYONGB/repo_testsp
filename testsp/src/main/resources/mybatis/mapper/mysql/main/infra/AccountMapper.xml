@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <!-- dtd는 resultmap ,select라는 설명서 기능 구현 -->
 
 <mapper namespace="com.test.fapp.account.AccountDao">   
 
@@ -20,7 +21,7 @@
 	</select>
 	  
 	  
-	 <select id="selectList_test" resultMap="resultMapObj">
+	 <select id="selectView" resultMap="resultMapObj">
 		SELECT
 			a.seq,
 			a.first_Name,
@@ -35,6 +36,19 @@
 		ORDER BY seq asc
 	</select>
 	
+	  
+	<insert id="insert">
+		INSERT into account(
+			first_Name,last_Name,nick_Name,text,represent
+		)Values(
+			#{first_Name},#{last_Name},#{nick_Name},#{text},#{represent}
+		)
+		<selectKey resultType="String" keyProperty="seq" order="AFTER">
+			SELECT last_insert_id()
+		</selectKey>
+	
+	</insert>  
+	  
 	  
 	  
 </mapper>
