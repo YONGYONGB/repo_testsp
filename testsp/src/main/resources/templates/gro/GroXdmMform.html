@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+</head>
+<body>
+
+<form action="groXdmUpdate" method="get" id = "form">
+	<input type="hidden" name = "seq" th:value ="${item?.seq}">
+	seq:<input type ="text" name = "seq" disabled id ="seq" th:value ="${item?.seq}">  <!-- ?은 없는데로 가겠다-->
+	grou:<input type ="text" name = "grou" placeholder="이름을 입력"  id="grou" th:value ="${item?.grou}">
+	<button type = "button" id="btnSave">저장</button>
+</form>
+
+<script type="text/javascript">
+	document.getElementById("btnSave").onclick = function(){
+	
+        document.getElementById("form").submit();
+        alert("수정하였습니다");
+    
+} 
+
+</script>
+	
+</body>
+</html>

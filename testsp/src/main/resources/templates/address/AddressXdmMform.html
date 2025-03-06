@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+</head>
+<body>
+	<form action="addressXmdUpd" method="post" id ="form">
+			<input type="hidden"  name="seq" th:value = ${item?.seq}>
+		<!-- 	<input type="hidden"  name="account_seq" th:value = ${item?.account_seq}> -->
+			
+			seq:<input type="text" name="seq" id= "seq" disabled th:value = ${item?.seq}>
+			address:<input type="text" id= "address" name="address" th:value = ${item?.address}>
+			detail_address:<input type="text" id= "detail_address" name="detail_address" th:value = ${item?.detail_address}>
+			space:<input type="text" id= "space" name="space" th:value = ${item?.space}>
+			account_seq:<input type="text" id= "account_seq" name="account_seq" th:value = ${item?.account_seq}>
+			represent:<input type="text" id= "represent" name="represent" th:value = ${item?.represent}>
+			<button type="button" id="saveAddress">등록</button>
+	</form>
+	<script type="text/javascript">
+		document.getElementById("saveAddress").onclick = function(){
+			document.getElementById("form").submit();
+			alert("성공하셨습니다");
+		}
+	</script>
+</body>
+</html>

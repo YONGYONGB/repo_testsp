@@ -23,6 +23,7 @@
 	 <select id="selectView" resultMap="resultMapObj">
 		SELECT
 			a.seq,
+			b.nick_Name,
 	    	a.special_day,
 	    	a.date,
 	    	a.lift_force,
@@ -30,12 +31,47 @@
 	    	a.represent
 		FROM
 			day a
+		LEFT JOIN account b ON  a.account_seq = b.seq 
 		WHERE 1=1
 			AND a.seq = #{seq}       <!-- seq 를 특정함 , #(seq)정적으로 받음 이때 이 seq는 dto, controller의 seq와 같다 -->	
 		ORDER BY seq asc
 	</select>
 	
+	<insert id="insert">
+	Insert into day
+	(
+		special_day,
+		date,
+		lift_force,
+		account_seq,
+		represent
+	)
+	values
+	(
+		#{special_day},
+		#{date},
+		#{lift_force},
+		#{account_seq},
+		#{represent}
+	)
+		<selectKey resultType="String" keyProperty="seq" order="AFTER">
+		SELECT last_insert_id()
+		</selectKey>	
+	</insert>
 	  
+	 <update id="update">
+	 update  day A, account B set
+	 	nick_Name = #{nick_Name},
+	 	A.special_day = #{special_day},
+		A.date =	#{date},
+		A.lift_force = #{lift_force},
+		A.account_seq = #{account_seq},
+		A.represent = #{represent}
+	where 
+	A.seq = #{seq}
+	AND  B.seq = #{seq}
+	 
+	 </update>
 	  
 </mapper>
 

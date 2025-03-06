@@ -1,17 +1,27 @@
 package com.test.fapp.day;
 
+import java.time.LocalDate;
+
 public class DayDto {
 	
 	private String seq;
 	private String special_day;
-	private String date;
+	private LocalDate date;
 	private Boolean lift_force;
 	private Integer account_seq;
 	private Boolean represent;
 	
+	private String nick_Name;
+
 	
+
 	
-	
+	public String getNick_Name() {
+		return nick_Name;
+	}
+	public void setNick_Name(String nick_Name) {
+		this.nick_Name = nick_Name;
+	}
 	public String getSeq() {
 		return seq;
 	}
@@ -24,16 +34,17 @@ public class DayDto {
 	public void setSpecial_day(String special_day) {
 		this.special_day = special_day;
 	}
-	public String getDate() {
+	
+	public LocalDate getDate() {
 		return date;
 	}
-	public void setDate(String date) {
+	public void setDate(LocalDate date) {
 		this.date = date;
 	}
 	public Boolean getLift_force() {
 		return lift_force;
 	}
-	public void setLife_force(Boolean lift_force) {
+	public void setLift_force(Boolean lift_force) {
 		this.lift_force = lift_force;
 	}
 	public Integer getAccount_seq() {

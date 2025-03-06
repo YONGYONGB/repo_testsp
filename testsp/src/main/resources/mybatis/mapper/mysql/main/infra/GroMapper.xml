@@ -16,7 +16,7 @@
 	</select>
 	  
 	  
-	 <select id="selectItem" resultMap="resultMapObj">
+	 <select id="selectView" resultMap="resultMapObj">
 		SELECT
 			a.seq,
 	    	a.grou
@@ -43,6 +43,12 @@
 		</selectKey>
 	</insert>
 
+	<update id="update">
+	update gro set
+		grou = #{grou}
+    WHERE seq = #{seq}
+		
+	</update>
 	
 	  
 	  

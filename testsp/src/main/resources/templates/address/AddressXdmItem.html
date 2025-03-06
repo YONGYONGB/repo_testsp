@@ -22,5 +22,8 @@
 			<td th:text="${item.represent}"></td>
 		</tr>
 	</table>
+	<a href = "/addressXdmList">목록</a>
+	<a th:href = "@{/addressXdmMform(seq=${item.seq})}">수정하기</a>
+	<a href = "/addressXdmList">삭제하기</a>
 </body>
 </html>

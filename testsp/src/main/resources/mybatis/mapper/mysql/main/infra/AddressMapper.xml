@@ -45,6 +45,16 @@
 		SELECT last_insert_id();
 	</selectKey>
 	</insert>
+	
+	<update id="update">
+	update address set
+		address = #{address},
+		detail_address = #{detail_address},
+		space = #{space},
+		account_seq = #{account_seq},
+		represent = #{represent}	
+	WHERE seq = #{seq}
+	</update>
 	  	
 	  
 </mapper>

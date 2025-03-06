@@ -7,6 +7,7 @@
 	<table>
 		<tr>
 			<td>seq</td>
+			<td>닉네임</td>
 			<td>special_day</td>
 			<td>date</td>
 			<td>lift_force</td>
@@ -15,6 +16,7 @@
 		</tr>
 		<tr>
 			<td th:text="${item.seq}"></td> 
+			<td th:text="${item.nick_Name}"></td> 
 			<td th:text="${item.special_day}"></td>
 			<td th:text="${item.date}"></td>
 			<td th:text="${item.lift_force}"></td>
@@ -22,5 +24,11 @@
 			<td th:text="${item.represent}"></td>
 		</tr>
 	</table>
+	
+	<a href ="dayXdmList">목록</a>
+	<a th:href ="@{dayXdmMform(seq=${item.seq})}">수정</a>
+	<a href ="dayXdmList">삭제</a>
+	
+	
 </body>
 </html>

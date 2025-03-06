@@ -18,9 +18,9 @@ public class GroController {
 		return "gro/GroXdmList"; // view 매핑
 	}
 	
-	@RequestMapping(value = "groXdmItem") // 아이템이 아니라 view임, url 매핑
-	public String groXdmItem(Model model, GroDto groDto) {
-		model.addAttribute("item", groService.selectItem(groDto));
+	@RequestMapping(value = "groXdmView") 
+	public String groXdmView(Model model, GroDto groDto) {
+		model.addAttribute("item", groService.selectView(groDto));
 		return "gro/GroXdmItem"; // view 매핑
 	}
 
@@ -29,6 +29,8 @@ public class GroController {
 	public String groXdmForm() {
 		return "gro/GroXdmForm";
 	}
+
+	
 	
 	@RequestMapping(value = "groXdmInst")
 	public String groXdmInst(GroDto groDto) {
@@ -39,6 +41,20 @@ public class GroController {
 		groService.insert(groDto);
 		System.out.println("groDto.getSeq()"+groDto.getSeq());
 		
+		return "redirect:/groXdmList";
+	}
+	
+	
+	@RequestMapping(value = "groXdmMform")
+	public String groXdmMform(GroDto groDto,Model model) {
+		model.addAttribute("item", groService.selectView(groDto));
+		return "gro/GroXdmMform";
+	}
+	
+	
+	@RequestMapping(value = "groXdmUpdate")
+	public String groXdmUpdate(GroDto groDto) {
+		groService.update(groDto);
 		return "redirect:/groXdmList";
 	}
 	

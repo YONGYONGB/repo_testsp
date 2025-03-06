@@ -11,4 +11,8 @@ public interface DayDao {
 	
 	public DayDto selectView(DayDto dayDto);
 	
+	public int insert(DayDto dayDto);
+	
+	public int update(DayDto dayDto);
+	
 }

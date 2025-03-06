@@ -19,4 +19,14 @@ public class DayService {
 		return dayDao.selectView(dayDto);
 	}
 	
+	public int insert(DayDto dayDto) {
+		
+		return dayDao.insert(dayDto);
+	}
+	
+	public int update(DayDto dayDto) {
+		
+		return dayDao.update(dayDto);
+	}
+	
 }

@@ -14,14 +14,16 @@ public class GroService {
 	public List<GroDto> selectList(){
 		return groDao.selectList();
 	}
-	public GroDto selectItem(GroDto groDto){
-		return groDao.selectItem(groDto);
+	public GroDto selectView(GroDto groDto){
+		return groDao.selectView(groDto);
 	}
 	
 	public int insert(GroDto groDto){
 		return groDao.insert(groDto);
 	}
 	
-	
+	public int update(GroDto groDto) {
+		return groDao.update(groDto);
+	}
 	
 }

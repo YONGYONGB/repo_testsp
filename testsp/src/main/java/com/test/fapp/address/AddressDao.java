@@ -12,4 +12,5 @@ public interface AddressDao {
 	public AddressDto selectView(AddressDto addressDto);
 	
 	public int insert(AddressDto addressDto);
+	public int update(AddressDto addressDto);
 }

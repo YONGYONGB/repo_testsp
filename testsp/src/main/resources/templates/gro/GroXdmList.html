@@ -11,7 +11,7 @@
 		</tr>
 		<tr th:each ="list :${list}">
 			<td th:text="${list.seq}"></td> 
-			<td><a th:href= "@{/groXdmItem(seq=${list.seq})}" th:text="${list.grou}"></a></td>
+			<td><a th:href= "@{/groXdmView(seq=${list.seq})}" th:text="${list.grou}"></a></td>
 		</tr>
 	</table>
 	

@@ -14,5 +14,12 @@
 			<td th:text="${item.grou}"></td>
 		</tr>
 	</table>
+	
+	<a href = "groXdmList">목록</a>
+
+	<a th:href = "@{/groXdmMform(seq=${item.seq})}">수정</a>
+	
+	<a href = "groXdmList">삭제</a>
+	
 </body>
 </html>
