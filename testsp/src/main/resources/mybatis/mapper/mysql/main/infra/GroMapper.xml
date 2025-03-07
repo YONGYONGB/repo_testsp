@@ -12,6 +12,7 @@
 		FROM
 			gro a
 			WHERE 1=1
+			AND dele = 0
 			ORDER BY seq asc
 	</select>
 	  
@@ -31,12 +32,14 @@
 	Insert into gro
 	(
 		<!-- seq, -->
-    	grou
+    	grou,
+    	dele
 	)
 	Values
 	(
 	<!-- 	#{seq}, -->
-		#{grou}
+		#{grou},
+		0
 	)
 		<selectKey resultType="String" keyProperty="seq" order="AFTER">
 			SELECT last_insert_id()
@@ -45,12 +48,26 @@
 
 	<update id="update">
 	update gro set
-		grou = #{grou}
+		delet = #{grou}
     WHERE seq = #{seq}
 		
 	</update>
 	
-	  
+	<delete id="delete">
+		<!-- delete from gro
+		where seq = #{seq} -->
+		
+	</delete>
+	
+	<delete id="unsee">
+		<!-- delete from gro
+		where seq = #{seq} -->
+		update gro set
+		dele = 1
+    	WHERE seq = #{seq}
+		
+	</delete>
+	    
 	  
 </mapper>
 

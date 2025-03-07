@@ -15,4 +15,9 @@ public interface GroDao {
 	
 	public int update(GroDto groDto);
 	
+	public int delete(GroDto groDto);
+	
+	public int unsee(GroDto groDto);
+	
+	
 }

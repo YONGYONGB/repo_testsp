@@ -58,4 +58,19 @@ public class GroController {
 		return "redirect:/groXdmList";
 	}
 	
+	
+	@RequestMapping(value = "groXdmDelet")
+	public String groXdmDelet(GroDto groDto) {
+		
+		groService.delete(groDto);		
+		return "redirect:/groXdmList";
+	}
+	
+	@RequestMapping(value = "groXdmUnsee")
+	public String groXdmUnsee(GroDto groDto) {
+		
+		groService.unsee(groDto);		
+		return "redirect:/groXdmList";
+	}
+	
 }

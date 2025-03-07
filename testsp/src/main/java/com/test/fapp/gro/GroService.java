@@ -26,4 +26,12 @@ public class GroService {
 		return groDao.update(groDto);
 	}
 	
+	public int delete(GroDto groDto) {
+		return groDao.delete(groDto);
+	}
+	
+	public int unsee(GroDto groDto) {
+		return groDao.unsee(groDto);
+	}
+	
 }

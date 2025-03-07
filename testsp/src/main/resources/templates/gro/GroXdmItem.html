@@ -19,7 +19,22 @@
 
 	<a th:href = "@{/groXdmMform(seq=${item.seq})}">수정</a>
 	
-	<a href = "groXdmList">삭제</a>
+	<a th:href = "@{/groXdmDelet(seq=${item.seq})}">삭제</a>
+	
+	<a th:href = "@{/groXdmUnsee(seq=${item.seq})}" id="uns">업제</a>
+	
+	<script type="text/javascript">
+	document.getElementById("uns").onclick = function(){
+		if(confirm("삭제")){
+			
+		}else{
+			return false;
+		}
+	}
+	
+	
+	</script>
+	
 	
 </body>
 </html>
